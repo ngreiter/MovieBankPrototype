@@ -1,0 +1,142 @@
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+    <a href="#" class="navbar-brand">
+        <i class="fas fa-video"></i> MOVIEBANK
+    </a>
+
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse1">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarCollapse1">
+        <div class="navbar-nav" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        About
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Log off</a>
+                </li>
+            </ul>
+        </div>
+
+        <form class="form-inline ml-auto" style="padding-top: 1rem">
+            <input type="text" class="form-control mr-sm-2" required placeholder="Search">
+            <button type="submit" class="btn btn-outline-light">Search</button>
+        </form>
+    </div>
+</nav>
+
+<!-- CARDS -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="align-self-center">
+                <!-- TABLE -->
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">MOVIE DATA</h5>
+                        <table class="table striped">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Movie name</th>
+                                    <th scope="col">Director</th>
+                                    <th scope="col">Movie genre</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let movie of movies; index as i" scope="row">
+                                    <th scope="row">{{ i + 1 }}</th>
+                                    <td>{{ movie.name }}</td>
+                                    <td>{{ movie.director }}</td>
+                                    <td>{{ movie.gender }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARD DECK -->
+            <div style="padding-top: 2%; padding-bottom: 4%">
+                <div class="card-deck">
+                    <!-- CARD TRAILER -->
+                    <div class="card order-first">
+                        <div class="card-image">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe width="560" height="315" frameborder="0" allowfullscreen
+                                    src="https://www.youtube.com/embed/watch?v=jfVTJm9NilA"></iframe>
+                            </div>
+                        </div>
+
+                        <div class="card-body">
+                            <h5 class="card-title">CORINGA</h5>
+                            <small id="emailHelp" class="form-text text-muted">Trailer of the week</small>
+                        </div>
+                    </div>
+
+                    <!-- CARD CRUD -->
+                    <div class="card order-last align-self-right">
+                        <div class="card-body">
+                            <h5 class="card-title">ADD NEW MOVIE</h5>
+
+                            <form>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Movie name</label>
+                                    <input type="text" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp" placeholder="Movie name" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Director</label>
+                                    <input type="text" class="form-control" id="exampleInputPassword1"
+                                        placeholder="Director" required>
+                                </div>
+
+                                <div class="form-group align-items-center">
+                                    <label for="inlineFormCustomSelect">Movie genre</label>
+                                    <select class="custom-select mr-sm-2" id="inlineFormCustomSelect"
+                                        placeholder="Director" required>
+                                        <option value="" selected>Choose one...</option>
+                                        <option value="Comedy">Comedy</option>
+                                        <option value="Drama">Drama</option>
+                                        <option value="Action">Action</option>
+                                        <option value="Horror">Horror</option>
+                                    </select>
+                                </div>
+
+                                <button type="submit" class="btn btn-default float-right">
+                                    <strong>Add</strong>
+                                </button>
+                                <button type="reset" class="btn btn-default float-right">
+                                    <strong>Cancel</strong>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="py-3 bg-dark text-white-50">
+    <div class="container text-center">
+        <small>Desing by &copy;nreiter</small>
+    </div>
+</footer>

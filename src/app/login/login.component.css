@@ -1,0 +1,9 @@
+.selector-for-some-widget {
+    box-sizing: content-box;
+}
+
+form {
+    padding: 50px;
+    display: grid;
+    padding-top: 30%;
+}
