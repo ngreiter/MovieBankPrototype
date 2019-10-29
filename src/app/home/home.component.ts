@@ -1,11 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-interface Movie {
-  name: string;
-  director: string;
-  gender: string;
-}
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -13,12 +7,17 @@ interface Movie {
 })
 export class HomeComponent implements OnInit {
 
+  element = new Object();
+  movies = new Array();
+
   constructor() { }
 
   ngOnInit() {
   }
 
-  onSubmit() {
+  onClick() {
+    this.movies.push(this.element);
+    this.element = new Object();
   }
 
 }
