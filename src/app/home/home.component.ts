@@ -6,8 +6,6 @@ interface Movie {
   gender: string;
 }
 
-const MOVIES: Movie[];
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -18,11 +16,9 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    movies = MOVIES;
   }
 
   onSubmit() {
-    movies.push(newMovie);
   }
 
 }
